@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/binds"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="vm"
-            type="com.yhkoo.architecture_sample_android.presentation.ui.main.MainViewModel" />
+            type="com.yhkoo.architecture_sample_android.presentation.ui.mvvm.MVVMViewModel" />
 
     </data>
 
@@ -19,33 +21,36 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingVertical="20dp"
-            android:text="Architecture Sample Home Activity"
+            android:text="Architecture Sample MVVM Activity"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button_mvvm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MVVM View로 이동"
-            android:onClick="@{() -> vm.onClickMVVMButton()}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/button_mvi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button_mvi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MVI View로 이동"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/button_mvvm"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4"
+            bind:image_url="@{vm.beerInfo.imageUrl}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{vm.beerInfo.name}"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            tools:text="맥주 이름" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

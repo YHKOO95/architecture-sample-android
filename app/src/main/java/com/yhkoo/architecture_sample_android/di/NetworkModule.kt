@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val BASE_URL = "http://3.36.240.13/"
+    private const val BASE_URL = "https://api.punkapi.com"
     private const val TIMEOUT = 15L
 
     @Singleton

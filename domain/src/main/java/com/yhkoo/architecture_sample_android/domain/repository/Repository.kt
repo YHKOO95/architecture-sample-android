@@ -1,10 +1,10 @@
 package com.yhkoo.architecture_sample_android.domain.repository
 
 import com.yhkoo.architecture_sample_android.domain.model.BeerInfo
-import retrofit2.Response
+import kotlinx.coroutines.flow.Flow
 
 interface Repository {
 
-    suspend fun getRandomBeer(): List<BeerInfo>
+    suspend fun getRandomBeer(): Flow<List<BeerInfo>>
 
 }

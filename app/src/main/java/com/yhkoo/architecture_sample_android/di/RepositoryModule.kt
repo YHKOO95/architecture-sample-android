@@ -1,6 +1,6 @@
 package com.yhkoo.architecture_sample_android.di
 
-import com.yhkoo.architecture_sample_android.data.network.service.PunkBeerService
+import com.yhkoo.architecture_sample_android.data.network.PunkBeerService
 import com.yhkoo.architecture_sample_android.data.repositoryimpl.RepositoryImpl
 import com.yhkoo.architecture_sample_android.domain.repository.Repository
 import dagger.Module
@@ -15,7 +15,7 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideMainRepository(
+    fun provideRepository(
         punkBeerService: PunkBeerService
     ): Repository {
         return RepositoryImpl(punkBeerService)

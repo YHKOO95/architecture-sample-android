@@ -22,7 +22,7 @@ data class BeerInfoRes(
     @SerializedName("description")
     val description: String,
     @SerializedName("image_url")
-    val imageUrl: String,
+    val imageUrl: String?,
     @SerializedName("abv")
     val abv: Double,
     @SerializedName("ibu")
@@ -62,7 +62,7 @@ data class BeerInfoRes(
                 tagline = response.tagline,
                 firstBrewed = response.firstBrewed,
                 description = response.description,
-                imageUrl = response.imageUrl,
+                imageUrl = response.imageUrl ?: "",
                 abv = response.abv,
                 ibu = response.ibu,
                 targetFg = response.targetFg,

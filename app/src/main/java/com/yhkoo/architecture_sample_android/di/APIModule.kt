@@ -1,6 +1,6 @@
 package com.yhkoo.architecture_sample_android.di
 
-import com.yhkoo.architecture_sample_android.data.network.service.PunkBeerService
+import com.yhkoo.architecture_sample_android.data.network.PunkBeerService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

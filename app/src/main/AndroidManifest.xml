@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.yhkoo.architecture_sample_android.app">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name="com.yhkoo.architecture_sample_android.App"
         android:allowBackup="true"

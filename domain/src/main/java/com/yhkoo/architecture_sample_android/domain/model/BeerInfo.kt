@@ -24,4 +24,30 @@ data class BeerInfo(
     val foodPairing: List<String>,
     val brewersTips: String,
     val contributedBy: String
-) : BaseModel
+) : BaseModel {
+    companion object {
+        val default = BeerInfo(
+            id = 0,
+            name = "",
+            tagline = "",
+            firstBrewed = "",
+            description = "",
+            imageUrl = "",
+            abv = 0.0,
+            ibu = 0,
+            targetFg = 0,
+            targetOg = 0,
+            ebc = "",
+            srm = "",
+            ph = 0.0,
+            attenuationLevel = 0.0,
+            volume = Value(),
+            boilVolume = Value(),
+            method = Method(),
+            ingredients = Ingredients(),
+            foodPairing = emptyList(),
+            brewersTips = "",
+            contributedBy = ""
+        )
+    }
+}

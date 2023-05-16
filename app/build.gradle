@@ -31,6 +31,7 @@ android {
     }
 
     kapt {
+        correctErrorTypes true
         javacOptions {
             option("-Adagger.fastInit=ENABLED")
             option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
@@ -46,6 +47,10 @@ android {
         jvmTarget = '11'
     }
 
+    dataBinding {
+        enabled = true
+    }
+
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
@@ -55,9 +60,9 @@ android {
 
 dependencies {
 
+    implementation project(path: ':presentation')
     implementation project(path: ':domain')
     implementation project(path: ':data')
-    implementation project(path: ':presentation')
 
     //kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.21"
