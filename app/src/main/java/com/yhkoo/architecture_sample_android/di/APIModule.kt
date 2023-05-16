@@ -1,5 +1,6 @@
 package com.yhkoo.architecture_sample_android.di
 
+import com.yhkoo.architecture_sample_android.data.network.service.PunkBeerService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,10 +11,10 @@ import retrofit2.Retrofit
 @Module
 @InstallIn(SingletonComponent::class)
 object APIModule {
-//
-//    @Singleton
-//    @Provides
-//    fun provideMainApi(retrofit: Retrofit): MainApi {
-//        return retrofit.create(MainApi::class.java)
-//    }
+
+    @Singleton
+    @Provides
+    fun providePunkBeerService(retrofit: Retrofit): PunkBeerService {
+        return retrofit.create(PunkBeerService::class.java)
+    }
 }
