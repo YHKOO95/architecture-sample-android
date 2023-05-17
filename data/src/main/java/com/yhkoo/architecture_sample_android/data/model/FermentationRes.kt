@@ -1,12 +1,9 @@
 package com.yhkoo.architecture_sample_android.data.model
 
 import com.google.gson.annotations.SerializedName
-import com.yhkoo.punkbeer.data.model.ValueRes
 import com.yhkoo.architecture_sample_android.data.base.DataMapper
 import com.yhkoo.architecture_sample_android.domain.model.Fermentation
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 data class FermentationRes(
     @SerializedName("twist")
     val twist: String? = null

@@ -6,7 +6,6 @@ open class Value(
     var value: Int = 0,
     var unit: String = ""
 ) : BaseModel {
-
     override fun toString(): String {
         return "$value $unit"
     }

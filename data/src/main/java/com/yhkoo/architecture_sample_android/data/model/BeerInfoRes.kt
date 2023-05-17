@@ -2,14 +2,9 @@ package com.yhkoo.architecture_sample_android.data.model
 
 import com.google.gson.annotations.SerializedName
 import com.yhkoo.architecture_sample_android.data.base.BaseResponse
-import com.yhkoo.punkbeer.data.model.IngredientsRes
-import com.yhkoo.punkbeer.data.model.MethodRes
-import com.yhkoo.punkbeer.data.model.ValueRes
 import com.yhkoo.architecture_sample_android.data.base.DataMapper
 import com.yhkoo.architecture_sample_android.domain.model.BeerInfo
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 data class BeerInfoRes(
     @SerializedName("id")
     val id: Int,

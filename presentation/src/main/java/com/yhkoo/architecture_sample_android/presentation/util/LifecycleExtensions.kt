@@ -1,6 +1,5 @@
 package com.yhkoo.architecture_sample_android.presentation.util
 
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
@@ -33,8 +32,4 @@ fun LifecycleOwner.repeatCallDefaultOnResume(
     lifecycleScope.launch {
         lifecycle.repeatOnLifecycle(state, block)
     }
-}
-
-fun Fragment.requireGrandParentFragment(): Fragment {
-    return this.requireParentFragment().requireParentFragment()
 }

@@ -1,13 +1,10 @@
-package com.yhkoo.punkbeer.data.model
+package com.yhkoo.architecture_sample_android.data.model
 
 import com.google.gson.annotations.SerializedName
 import com.yhkoo.architecture_sample_android.data.base.BaseResponse
-import com.yhkoo.architecture_sample_android.data.model.FermentationRes
 import com.yhkoo.architecture_sample_android.data.base.DataMapper
 import com.yhkoo.architecture_sample_android.domain.model.Method
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 data class MethodRes(
     @SerializedName("mash_temp")
     val mashTemp: List<MashTempRes>? = null,

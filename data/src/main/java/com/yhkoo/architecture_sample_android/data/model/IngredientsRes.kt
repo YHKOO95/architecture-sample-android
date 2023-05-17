@@ -1,12 +1,10 @@
-package com.yhkoo.punkbeer.data.model
+package com.yhkoo.architecture_sample_android.data.model
 
 import com.google.gson.annotations.SerializedName
 import com.yhkoo.architecture_sample_android.data.base.BaseResponse
 import com.yhkoo.architecture_sample_android.data.base.DataMapper
 import com.yhkoo.architecture_sample_android.domain.model.Ingredients
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 data class IngredientsRes(
     @SerializedName("malts")
     val malt: List<MaltRes>? = null
