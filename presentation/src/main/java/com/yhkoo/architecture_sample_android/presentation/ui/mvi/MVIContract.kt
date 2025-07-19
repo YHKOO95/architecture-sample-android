@@ -6,11 +6,14 @@ interface MVIContract : BaseContract<MVIContract.State, MVIContract.Event, MVICo
 
     data class State(
         val name: String = "",
-        val imageUrl: String = ""
+        val imageUrl: String = "",
+        val isLoading: Boolean = false,
+        val error: String? = null
     )
 
     sealed interface Event {
         object RequestBeerInfo : Event
+        object Retry : Event
     }
 
     sealed interface Effect {

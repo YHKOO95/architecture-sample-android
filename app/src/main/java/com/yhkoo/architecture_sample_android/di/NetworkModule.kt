@@ -12,6 +12,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import timber.log.Timber
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -27,17 +28,23 @@ object NetworkModule {
             .Builder()
             .readTimeout(TIMEOUT, TimeUnit.SECONDS)
             .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
+            .writeTimeout(TIMEOUT, TimeUnit.SECONDS)
 
         if (BuildConfig.DEBUG) {
             client.addNetworkInterceptor(HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.HEADERS
+                level = HttpLoggingInterceptor.Level.BODY
             })
 
             client.addInterceptor(Interceptor { chain ->
                 val request = chain.request()
                 val requestBuilder = request.newBuilder()
-
-                return@Interceptor chain.proceed(request = requestBuilder.build())
+                
+                Timber.d("Request: ${request.method} ${request.url}")
+                
+                val response = chain.proceed(requestBuilder.build())
+                Timber.d("Response: ${response.code} ${response.message}")
+                
+                response
             })
 
         } else {
@@ -48,7 +55,6 @@ object NetworkModule {
 
         return client.build()
     }
-
 
     @Singleton
     @Provides
